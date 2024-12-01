@@ -26,11 +26,16 @@ public final class Expbottle extends JavaPlugin {
         classManager.registerListeners();
         classManager.registerUtils();
         System.out.println("Plugin ingeschakeld!");
+        if (classManager.getUpdate().checkAndUpdate()){
+            classManager.getUpdate().restartServer();
+        }
+
     }
 
     @Override
     public void onDisable() {
         System.out.println("Plugin uitschakelen...");
+        classManager.getUpdate().checkAndUpdate();
         classManager.setPlayers(Collections.emptyList());
 
         System.out.println("Plugin uitgeschakeld!");

@@ -82,5 +82,10 @@
             <artifactId>Encryptor</artifactId>
             <version>28e1592</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.FireStar1111</groupId>
+            <artifactId>UpdateUtil</artifactId>
+            <version>06776ab19c</version>
+        </dependency>
     </dependencies>
 </project>

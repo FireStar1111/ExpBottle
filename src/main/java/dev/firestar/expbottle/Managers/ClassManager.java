@@ -4,6 +4,7 @@ import dev.firestar.expbottle.Commands.ExpBottleCommand;
 import dev.firestar.expbottle.Expbottle;
 import dev.firestar.expbottle.Listeners.onAnvilUse;
 import dev.firestar.expbottle.Listeners.useBottle;
+import dev.firestar.expbottle.Utils.Update;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ public class ClassManager {
         this.expbottle = expbottle;
     }
     private List<Player> players = new ArrayList<>();
+    private Update update;
 
     public void registerCommands(){
 
@@ -33,7 +35,7 @@ public class ClassManager {
         experienceManager = new ExperienceManager(expbottle);
     }
     public void registerUtils(){
-
+        update = new Update(expbottle);
     }
     public ExperienceManager getExperienceManager() {
         return experienceManager;
@@ -45,5 +47,9 @@ public class ClassManager {
 
     public void setPlayers(List<Player> players) {
         this.players = players;
+    }
+
+    public Update getUpdate() {
+        return update;
     }
 }
